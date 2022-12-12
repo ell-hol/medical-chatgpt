@@ -4,7 +4,6 @@ from torch import nn, einsum
 
 from einops import rearrange
 
-# attention
 
 def exists(val):
     return val is not None
@@ -13,6 +12,9 @@ def default(val, d):
     if exists(val):
         return val
     return d() if isfunction(d) else d
+
+
+# attention
 
 class Attention(nn.Module):
     def __init__(
